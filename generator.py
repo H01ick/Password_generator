@@ -2,8 +2,20 @@ from tkinter import *
 import config
 import random
 import clipboard
+import os
+import sys
+
 
 password_to_clipboard = ""
+
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 
 def appearEntrySymbols() -> None:
@@ -51,7 +63,7 @@ def copyPassword() -> None:
 
 
 root = Tk()
-photo = PhotoImage(file="logo.png")
+photo = PhotoImage(file=resource_path("logo.png"))
 root.iconphoto(False, photo)
 root.grid_columnconfigure(0, minsize=220)
 pass_length_label = Label(text="pass length")
