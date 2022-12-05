@@ -51,6 +51,8 @@ def copyPassword() -> None:
 
 
 root = Tk()
+photo = PhotoImage(file="logo.png")
+root.iconphoto(False, photo)
 root.grid_columnconfigure(0, minsize=220)
 pass_length_label = Label(text="pass length")
 pass_length_var = IntVar(value=8)
